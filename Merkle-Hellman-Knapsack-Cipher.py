@@ -12,6 +12,11 @@ Contact: joshua_mol@hotmail.ca
 Version: 1
 '''
 
+'''
+Modified Code: def egcd(a, b):
+Source:        Paul Nelson Baker
+Website:       https://stackoverflow.com/questions/18940194/using-extended-euclidean-algorithm-to-create-rsa-private-key
+'''
 def egcd(a, b):
     u = a
     x, lastX = 0, 1
@@ -24,6 +29,10 @@ def egcd(a, b):
     if (lastY < 0):
         lastY = u + lastY
     return (lastY)
+
+'''
+END OF SOURCED CODE
+'''
 
 def decrypt(encryptedMessage, u, v):
     inverseV = egcd(u, v)
