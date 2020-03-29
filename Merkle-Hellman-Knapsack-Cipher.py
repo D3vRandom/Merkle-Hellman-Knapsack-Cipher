@@ -31,16 +31,10 @@ def egcd(a, b):
     return (lastY)
 
 '''
-END OF SOURCED CODE
+Modified Code: def subSetSum(array, target):
+Source:        hivert
+Website:       https://stackoverflow.com/questions/42422921/multiple-subset-sum-calculation
 '''
-
-def decrypt(encryptedMessage, u, v):
-    inverseV = egcd(u, v)
-    decryptedMessage = []
-    for element in encryptedMessage:
-        decryptedMessage.append(element * inverseV % u)
-    return decryptedMessage
-
 def subSetSum(array, target):
     res = {0 : []}
     for i in array:
@@ -52,6 +46,18 @@ def subSetSum(array, target):
                 return l+[i]
         res = newres
     return None
+
+'''
+END OF SOURCED CODE
+'''
+
+def decrypt(encryptedMessage, u, v):
+    inverseV = egcd(u, v)
+    decryptedMessage = []
+    for element in encryptedMessage:
+        decryptedMessage.append(element * inverseV % u)
+    return decryptedMessage
+
 
 def binaryOrder(array, message):
     bindumpArray = []
