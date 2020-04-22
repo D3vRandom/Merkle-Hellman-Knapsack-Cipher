@@ -6,16 +6,17 @@ import math
 import os
 import struct
 '''
-Author: Joshua Mol
+Author: ジョシュアモル
 Date: March, 6, 2020
-Contact: joshua_mol@hotmail.ca
+Contact: devr4ndom@gmail.com
 Version: 1
 '''
 
 '''
-Modified Code: def egcd(a, b):
 Source:        Paul Nelson Baker
+Source:        hivert
 Website:       https://stackoverflow.com/questions/18940194/using-extended-euclidean-algorithm-to-create-rsa-private-key
+Website:       https://stackoverflow.com/questions/42422921/multiple-subset-sum-calculation
 '''
 def egcd(a, b):
     modulus = a
@@ -30,11 +31,6 @@ def egcd(a, b):
         lastY = modulus + lastY
     return (lastY)
 
-'''
-Modified Code: def subSetSum(array, target):
-Source:        hivert
-Website:       https://stackoverflow.com/questions/42422921/multiple-subset-sum-calculation
-'''
 def subSetSum(array, target):
     res = {0 : []}
     for i in array:
@@ -46,10 +42,6 @@ def subSetSum(array, target):
                 return l+[i]
         res = newres
     return None
-
-'''
-END OF SOURCED CODE
-'''
 
 def decrypt(encryptedMessage, modulus, privateKey):
     inverseV = egcd(modulus, privateKey)
